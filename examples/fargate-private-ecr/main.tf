@@ -57,8 +57,9 @@ module "ecs_task_definition" {
   source = "../../modules/service"
 
   # Service
-  name        = "${local.name}-standalone"
-  cluster_arn = module.ecs_cluster.arn
+  name          = "${local.name}-standalone"
+  cluster_arn   = module.ecs_cluster.arn
+  desired_count = 0
 
   # Task Definition
   volume = {
